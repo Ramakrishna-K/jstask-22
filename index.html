@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11/17/24</title>
+</head>
+<body>
+<p id="sec"></p>
+<button onclick="stop()">stop</button>
+<button onclick="start()">start</button>
+<button onclick="reset()">reset</button>
+
+    <script>
+
+        let water=()=>{
+            confirm("drink water")
+        }
+
+        let fun=setInterval(water,10000)
+        console.log(fun)
+
+        setTimeout(()=>{
+            confirm("its time to dink water")
+        },60*60*1000)
+
+
+
+        let sec1=document.getElementById("sec");
+        let ct=0;
+        let fn;
+        function watch(){
+            ct++
+            sec1.innerText=ct;
+        }
+        function start(){
+            fn=setInterval(watch, 100);
+        }
+
+        function stop(){
+            clearInterval(fn)
+        }
+
+        function reset(){
+            ct=0
+        }
+    </script>
+</body>
+</html>
